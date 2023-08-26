@@ -1,12 +1,12 @@
 <script setup>
 import { mdiChevronUp, mdiChevronDown } from "@mdi/js";
 import { computed, ref, onMounted, onBeforeUnmount } from "vue";
-import { useStyleStore } from "@/Stores/Style";
-import { useMainStore } from "@/Stores/Main";
-import BaseIcon from "@/Components/BaseIcon";
-import UserAvatarCurrentUser from "@/Components/UserAvatarCurrentUser";
-import NavBarMenuList from "@/Components/NavbarMenuList";
-import BaseDivider from "@/Components/BaseDivider";
+import { useStyleStore } from "@/Stores/Style.js";
+import { useMainStore } from "@/Stores/Main.js";
+import BaseIcon from "@/Components/BaseIcon.vue";
+import UserAvatarCurrentUser from "@/Components/UserAvatarCurrentUser.vue";
+import NavBarMenuList from "@/Components/NavbarMenuList.vue";
+import BaseDivider from "@/Components/BaseDivider.vue";
 
 const props = defineProps({
   item: {
@@ -23,7 +23,7 @@ const is = computed(() => {
   }
 
   if (props.item.to) {
-    return RouterLink;
+
   }
 
   return "div";

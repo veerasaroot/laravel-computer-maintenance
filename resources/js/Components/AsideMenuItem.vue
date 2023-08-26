@@ -1,11 +1,10 @@
 <script setup>
 import { ref, computed } from "vue";
-import { RouterLink } from "vue-router";
-import { useStyleStore } from "@/stores/style.js";
+import { useStyleStore } from "@/stores/Style.js";
 import { mdiMinus, mdiPlus } from "@mdi/js";
-import { getButtonColor } from "@/colors.js";
-import BaseIcon from "@/components/BaseIcon.vue";
-import AsideMenuList from "@/components/AsideMenuList.vue";
+import { getButtonColor } from "@/Colors.js";
+import BaseIcon from "@/Components/BaseIcon.vue";
+import AsideMenuList from "@/Components/AsideMenuList.vue";
 
 const props = defineProps({
   item: {
@@ -48,7 +47,7 @@ const menuClick = (event) => {
 <template>
   <li>
     <component
-      :is="item.to ? RouterLink : 'a'"
+      is="a"
       v-slot="vSlot"
       :to="item.to ?? null"
       :href="item.href ?? null"

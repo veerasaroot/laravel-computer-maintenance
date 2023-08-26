@@ -1,16 +1,16 @@
 <script setup>
 import { mdiForwardburger, mdiBackburger, mdiMenu } from "@mdi/js";
 import { ref } from "vue";
-import menuAside from "@/MenuAside";
-import menuNavBar from "@/MenuNavbar";
-import { useMainStore } from "@/Stores/Main";
-import { useStyleStore } from "@/Stores/Style";
-import BaseIcon from "@/Components/BaseIcon";
-import FormControl from "@/Components/FormControl";
-import NavBar from "@/Components/Navbar";
-import NavBarItemPlain from "@/Components/NavbarItemPlain";
-import AsideMenu from "@/Components/AsideMenu";
-import FooterBar from "@/Components/FooterBar";
+import menuAside from "@/MenuAside.js";
+import menuNavBar from "@/MenuNavbar.js";
+import { useMainStore } from "@/Stores/Main.js";
+import { useStyleStore } from "@/Stores/Style.js";
+import BaseIcon from "@/Components/BaseIcon.vue";
+import FormControl from "@/Components/FormControl.vue";
+import NavBar from "@/Components/Navbar.vue";
+import NavBarItemPlain from "@/Components/NavbarItemPlain.vue";
+import AsideMenu from "@/Components/AsideMenu.vue";
+import FooterBar from "@/Components/FooterBar.vue";
 
 useMainStore().setUser({
     name: "John Doe",
@@ -23,15 +23,8 @@ const layoutAsidePadding = "xl:pl-60";
 
 const styleStore = useStyleStore();
 
-const router = useRouter();
-
 const isAsideMobileExpanded = ref(false);
 const isAsideLgActive = ref(false);
-
-router.beforeEach(() => {
-    isAsideMobileExpanded.value = false;
-    isAsideLgActive.value = false;
-});
 
 const menuClick = (event, item) => {
     if (item.isToggleLightDark) {

@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref, onMounted } from "vue";
-import { useMainStore } from "@/Stores/Main";
+import { useMainStore } from "@/Stores/Main.js";
+import { Head } from '@inertiajs/vue3';
 import {
     mdiAccountMultiple,
     mdiCartOutline,
@@ -42,6 +43,8 @@ const transactionBarItems = computed(() => mainStore.history);
 </script>
 
 <template>
+    <Head title="Dashboard" />
+
     <AuthLayout>
         <SectionMain>
             <SectionTitleLineWithButton

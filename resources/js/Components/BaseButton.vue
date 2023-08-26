@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from "vue";
-import { getButtonColor } from "@/Colors";
+import { getButtonColor } from "@/Colors.js";
 import BaseIcon from "@/Components/BaseIcon.vue";
 
 const props = defineProps({
